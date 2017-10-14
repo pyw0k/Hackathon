@@ -1,16 +1,35 @@
-<html>
-    <head>
-    <title>Reddit</title>
-    </head>
-    <body>
-        <h1>Reddit</h1>
-        <div id="wrapper">
-            <div name="headnav"></div>
-            <div name="headcategory"></div>
-            <div name="dash"></div>
-            <div name="login"></div>
-            <div name="extra"></div>
-            <div name="footer"></div>
-        </div>
-    </body>
-</html>
+<!DOCTYPE html>
+    <html>
+        <head>
+        <title>Reddit</title>
+        </head>
+        <body>
+            <h1>Reddit</h1>
+            <div id="wrapper">
+                <div name="headnav"></div>
+                <div name="headcategory"></div>
+                <div name="dash"></div>
+                <div name="side">        
+                    <div name="search">
+                       Search: <form action="/search" method="post">
+                            <input type="text" name="">
+                            <input type="submit" name="Submit">
+                        </form>
+                    </div>
+                    <div name="login">  
+                        <form action="/login" method="post">
+                            Username:<input type="text" name="username">
+                            Password:<input type="password" name="password"> 
+                        </form>
+                    </div>
+                    <div id="rememberme">
+                        <input type="checkbox" name="rememberme" id="rem">
+                        <label for='rem'>remember me</label>
+                        <a href="https://www.reddit.com"> reset password</a>
+                    </div>
+                </div>
+                <div name="extra"></div>
+                <div name="footer"></div>
+            </div>
+        </body>
+    </html>
