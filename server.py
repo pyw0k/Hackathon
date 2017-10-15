@@ -12,15 +12,13 @@ def index():
 
 @app.route('/create', methods=['POST'])
 def create_user():
-     username = request.form['username']
-     password = md5.new(request.form['password']).hexdigest()
-     #passwordconfirm = md5.new(request.form ['password'].hexdigest())
-     insert_query = "INSERT INTO users (username, password, created_at, updated_at) VALUES (:username, :password, NOW(), NOW())"
-     query_data = { 'username': username, 'password': password }
-     mysql.query_db(insert_query, query_data)
-	return redirect('/')
-
-
+    username = request.form['username']
+    password = md5.new(request.form['password']).hexdigest()
+    #passwordconfirm = md5.new(request.form ['password'].hexdigest())
+    insert_query = "INSERT INTO users (username, password, created_at, updated_at) VALUES (:username, :password, NOW(), NOW())"
+    query_data = { 'username': username, 'password': password }
+    mysql.query_db(insert_query, query_data)
+    return redirect('/create')
 #@app.route('/reset', methods = ['POST'])
 #def reset():
 
