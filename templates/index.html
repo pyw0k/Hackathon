@@ -1,54 +1,29 @@
-<!DOCTYPE html>
-    <html>
-        <head>
-        <title>Reddit</title>
-        </head>
-        <body>
-            <h1>Reddit</h1>
-            <div id="wrapper">
-                <div name="side">        
-                    <div name="search">
-                       Search: <form action="/search" method="post">
-                            <input type="text" name="search">
-                            <input type="submit" name="Submit">
-                        </form>
-                    </div>
-                    <div name="login">  
-                        <form action="/login" method="post">
-                            Username:<input type="text" name="username">
-                            Password:<input type="password" name="password"> 
-                            <button class='btn' type='submit'>Submit</button>
-                        </form>
-                    </div>
-                    <div id="rememberme">
-                        <!--  AD plans on adding functionality for this button -->
-                        <input type="checkbox" name="rememberme" id="rem">
-                        <label for='rem'>remember me</label>
-                        <a href="/reset"> reset password</a>
-                        <button class='btn' type="submit">login</button>
-                    </div>
-                </div>
-                 <h1>Reddit</h1>
-<!--headnavpart by YUKIE ---------------------------------------------------------------------->
-            <div name="headnav">
+<html>
+    <head>
+    <title>Reddit</title>
+    </head>
+    <body>
+        <h1>Reddit</h1>
+        <div id="wrapper">
+            <div name="headnav"></div>
+<!--headcategory  ---------------------------------------------------------------------->
+            <div name="headcategory">
                 <img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/82/Reddit_logo_and_wordmark.svg/1200px-Reddit_logo_and_wordmark.svg.png" width="100" height="35">
                 <div id="navbar"><a href="/">reddit.com</a>&nbsp;
                     <ul class="tabmenu ">
-                    <li class="selected"><a href="https://www.reddit.com/" class="choice">hot</a></li>
-                    <li><a href="https://www.reddit.com/new/" class="choice">new</a></li>
-                    <li><a href="https://www.reddit.com/rising/" class="choice">rising</a></li>
-                    <li><a href="https://www.reddit.com/controversial/" class="choice">controversial</a></li>
-                    <li><a href="https://www.reddit.com/top/" class="choice">top</a></li>
-                    <li><a href="https://www.reddit.com/gilded/" class="choice">gilded</a></li>
-                    <li><a href="https://www.reddit.com/wiki/" class="choice">wiki</a></li>
+                    <li class="selected"><a href="/" class="choice">hot</a></li>
+                    <li><a href="/" class="choice">new</a></li>
+                    <li><a href="/" class="choice">rising</a></li>
+                    <li><a href="/" class="choice">controversial</a></li>
+                    <li><a href="/" class="choice">top</a></li>
+                    <li><a href="/" class="choice">gilded</a></li>
+                    <li><a href="/" class="choice">wiki</a></li>
                     </ul>
                 </div>
                 <div><p>What to join? <a href="">Log in</a> or <a href="">sign up</a> in seconds. | English</p></div>
             </div>
-<!--headnavpart by YUKIE ---------------------------------------------------------------------->
-            <div name="headcategory"></div>
 
-<!--dash by YUKIE ---------------------------------------------------------------------->
+<!--dash ---------------------------------------------------------------------->
             <div name="dash">
                 <!--topmenu  -->
                 <div><p>Popular in: <a href="">United States</a>&nbsp;Select state: <a href="">California</a></p></div>    
@@ -72,6 +47,7 @@
                         </ul>                  
                     </div>            
                 <!--contents starts from 1-25 -->
+          
                     <div class="postcontent"><span>1</span>
                         <div class="midcol unvoted"> 
                             <div class="arrow up login-required access-required" data-event-action="upvote" role="button" aria-label="upvote" tabindex="0"></div>
@@ -554,9 +530,32 @@
                     <div><span>view more:</span><span><a href="/">next></a></span></div>
 
             </div>
-<!--dash by YUKIE ---------------------------------------------------------------------->
-                <div name="extra"></div>
-                <div name="footer"></div>
+<!--dash  ---------------------------------------------------------------------->
+            <div name="side">
+                                  <div name="search">
+                       Search: <form action="/search" method="post">
+                            <input type="text" name="search">
+                            <input type="submit" name="Submit">
+                        </form>
+                    </div>
+                    <div name="login">  
+                        <form action="/login" method="post">
+                            Username:<input type="text" name="username">
+                            Password:<input type="password" name="password"> 
+                            <button class='btn' type='submit'>Submit</button>
+                        </form>
+                    </div>
+                    <div id="rememberme">
+                        <!--  AD plans on adding functionality for this button -->
+                        <input type="checkbox" name="rememberme" id="rem">
+                        <label for='rem'>remember me</label>
+                        <a href="/reset"> reset password</a>
+                        <button class='btn' type="submit">login</button>
+                    </div>
+                
             </div>
-        </body>
-    </html>
+            <div name="extra"></div>
+            <div name="footer"></div>
+        </div>
+    </body>
+</html>
