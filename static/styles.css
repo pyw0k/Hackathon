@@ -1,50 +1,65 @@
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46  a{
+a{
     text-decoration: none;
+    color: #369;
+    margin: 5px;
+}
+#wrapper {
+    margin: auto;
+}
+#headnav {
+    display: inline-block;
+    vertical-align: top; 
+    position: relative; 
+    font-size: 40px; 
+}
+
+#myDropdown {
+    float: right; 
+}
+
+#mysubscription{
+    float: left; 
+}
+
+#sidelist {
+    font-size: 40px; 
+    background-color:#F0F0F0;
+}
+
+#registrationform, #side {
+    border: 1px solid blue; 
+}
+
+
+#myDropdown, mysubscription, .sidelist {
+    display: inline-block;
+    vertical-align: top; 
+}
+
+#sidepanel {
+    display: inline-block; 
+    width: 400px; 
+
+}
+
+#dash, #sidepanel {
+    display: inline-block;
+    vertical-align: top; 
+
+}
+
+#dash {
+    width: 70%; 
+}
+
+#header-bottom-left {
+    font-size: larger;
+}
+
+.headcategory {
+    height: 60px; 
+    width: auto; 
+    background-color: rgb(202, 228, 247);
 }
 
 .dropbtn {
@@ -88,3 +103,107 @@
 
 .show {display:block;}
 
+a {
+    text-decoration: none;
+    color: #369; 
+    margin: 5px; 
+}
+
+ol, ul {
+    list-style: none;
+}
+
+.tabmenu {
+    list-style-type: none; 
+    white-space: nowrap;
+    display: inline-block;
+    margin-top: 5px; 
+    vertical-align: bottom; 
+}
+
+li {
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.tabmenu li a {
+    padding: 2px; 
+    background-color: #eff7ff;
+     
+}
+
+.tabmenu li {
+    font-weight: bold; 
+}
+
+img, #navbar {
+    display: inline-block;
+    vertical-align: top;
+}
+
+#navbar {
+    vertical-align: top;
+    padding-top: 35px; 
+}
+
+.rightside {
+    padding: 15px; 
+}
+
+h4 {
+    text-align: center; 
+    margin-top: 10px; 
+    padding: 5px; 
+}
+
+#regi_info {
+    padding: 15px; 
+    margin: 3px; 
+}
+
+#new_post {
+    margin: 20px; 
+    padding: 10px;  
+}
+
+#add_post_btn {
+    width: 180px; 
+    height: 50px; 
+    background-color:  rgb(236, 244, 252);
+    border-radius: 10px; 
+    font-size: 15px; 
+    margin-left: 90px; 
+}
+
+#side {
+    margin-bottom: 5px; 
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    
+}
+
+
+.dropbtn {
+    background-color:#F0F0F0;
+    color:black;
+    font-size: 13px;
+    border: none;
+    cursor: pointer;
+}
+
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color:#CEE3F7;
+}
+
+
+.dropdown a:hover {
+    background-color: #f1f1f1
+}
+
+#headnav1 {
+    background-color:#F0F0F0;
+}
