@@ -88,9 +88,52 @@
 <!--dash -->
             <div name="dash">
                 <!--topmenu  -->
-                <div><p>Popular in: <a href="">United States</a>&nbsp;Select state: <a href="">California</a></p></div>    
-              
-                
+                <div><p>Popular in: <a href="">United States</a>&nbsp;Select state: <a href="">California</a></p></div>
+                <!--contents starts from recommended -->
+                    <div class="postcontent"><img src="/">
+                        <div class="midcol unvoted">
+                            <div class="arrow up login-required access-required" data-event-action="upvote" role="button" aria-label="upvote" tabindex="0"></div>
+                            <div class="score dislikes">10.1k</div>
+                            <div class="score unvoted">10.1k</div>
+                            <div class="score likes">10.1k</div>
+                            <div class="arrow down login-required access-required" data-event-action="downvote" role="button" aria-label="downvote" tabindex="0"></div>
+                        </div>
+                        <img src="image">
+                        <p><a href="https://">post title</a></p>
+                        <div>video players</div>
+                        <p>submitted by hours ago. by </p>
+                        <ul class="flat-list buttons">
+                            <li class="first"><a href="/" class="bylink comments may-blank" rel="nofollow">1767 comments</a></li>
+                            <li class="share"><a class="post-sharing-button" href="javascript: void 0;">promoted</a></li>
+                            <li class="report-button login-required"><a href="javascript:void(0)" class="reportbtn access-required">report</a></li>
+                        </ul>
+                    </div>
+                <!--contents starts from 1-25 -->
+                    {% for subpost in all_subposts: %}
+                    <div class="postcontent"><span>25</span>
+                      <h3>{{subpost['text']}}</h3>
+                      <p>submitted on {{subpost['created_at']}} by {{subpost['username']}} to {{subpost['url']}}</p>
+                    {% endfor %}
+                        <div class="midcol unvoted">
+                            <div class="arrow up login-required access-required" data-event-action="upvote" role="button" aria-label="upvote" tabindex="0"></div>
+                            <div class="score dislikes">10.1k</div>
+                            <div class="score unvoted">10.1k</div>
+                            <div class="score likes">10.1k</div>
+                            <div class="arrow down login-required access-required" data-event-action="downvote" role="button" aria-label="downvote" tabindex="0"></div>
+                        </div>
+                        <img src="image">
+                        <p><a href="https://">post title</a></p>
+                        <div>video players</div>
+                        <p>submitted by hours ago. by</p>
+                        <ul class="flat-list buttons">
+                            <li class="first"><a href="/" class="bylink comments may-blank" rel="nofollow">1767 comments</a></li>
+                            <li class="share"><a class="post-sharing-button" href="javascript: void 0;">share</a></li>
+                            <li class="report-button login-required"><a href="javascript:void(0)" class="reportbtn access-required">report</a></li>
+                        </ul>
+                    </div>
+
+                <!--the end of 25 contents  -->
+
                     <div><span>view more:</span><span><a href="/">next></a></span></div>
 
             </div>
