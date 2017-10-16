@@ -5,23 +5,85 @@
     <body>
         <h1>Reddit</h1>
         <div id="wrapper">
-            <div name="headnav"></div>
-<!--headcategory  -->
-            <div name="headcategory">
-                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/82/Reddit_logo_and_wordmark.svg/1200px-Reddit_logo_and_wordmark.svg.png" width="100" height="35">
-                <div id="navbar"><a href="/">reddit.com</a>&nbsp;
-                    <ul class="tabmenu ">
-                    <li class="selected"><a href="/" class="choice">hot</a></li>
-                    <li><a href="/" class="choice">new</a></li>
-                    <li><a href="/" class="choice">rising</a></li>
-                    <li><a href="/" class="choice">controversial</a></li>
-                    <li><a href="/" class="choice">top</a></li>
-                    <li><a href="/" class="choice">gilded</a></li>
-                    <li><a href="/" class="choice">wiki</a></li>
-                    </ul>
+                <div name="headnav">                
+                    <div class="dropdown">
+                        <button onclick="myFunction()" class="dropbtn">MY SUBSCRIPTIONS</button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <a href="/subreddits">EDIT SUBSCRIPTIONS</a>
+                        </div>
+                    </div>
+                     
+                    <script>
+                         /* When the user clicks on the button, 
+                         toggle between hiding and showing the dropdown content */
+                         function myFunction() {
+                             document.getElementById("myDropdown").classList.toggle("show");
+                         
+                         // Close the dropdown if the user clicks outside of i                                window.onclick = function(event) {
+                            if (!event.target.matches('.dropbtn')) {
+                         
+                                var dropdowns = document.getElementsByClassName("dropdown-content");
+                                var i;
+                                for (i = 0; i < dropdowns.length; i++) {
+                                  var openDropdown = dropdowns[i];
+                                  if (openDropdown.classList.contains('show')) {
+                                    openDropdown.classList.remove('show');
+                                  }
+                                }
+                            }
+                         }
+                    </script>
+                     
+                    <div class="sidelist">
+                        <form action='/' method='POST'>
+                            <a href="/popular">POPULAR</a>
+                            <span class="separator">-</span>
+                            <a href="/all">ALL</a>
+                            <span class="separator">-</span>
+                            <a href="/random">RANDOM</a>
+                            <span class="separator">-</span>
+                            <a href="/users">USERS</a>
+                            <span class="separator">|</span>
+                            <a href="/askreddit">ASKREDDIT</a>
+                            <span class="separator">-</span>
+                            <a href="/funny">FUNNY</a>
+                            <span class="separator">-</span>
+                            <a href="/pics">PICS</a>
+                            <span class="separator">-</span>
+                            <a href="/worldnews">WORLDNEWS</a>
+                            <span class="separator">-</span>
+                            <a href="/videos">VIDEOS</a>
+                            <span class="separator">-</span>
+                            <a href="/movies">MOVIES</a>
+                            <span class="separator">-</span>
+                            <a href="/telivision">TELIVISION</a>
+                            <span class="separator">-</span>
+                            <a href="/jokes">JOKES</a>
+                            <span class="separator">-</span>
+                            <a href="/subreddits">more >></a>
+                        </form>    
+                    </div>    
                 </div>
-            </div>
-      
+
+
+
+                <div name="headcategory">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/82/Reddit_logo_and_wordmark.svg/1200px-Reddit_logo_and_wordmark.svg.png" width="100" height="35">
+                    <div id="navbar"><a href="/">reddit.com</a>&nbsp;
+                        <ul class="tabmenu ">
+                        <li class="selected"><a href="/" class="choice">hot</a></li>
+                        <li><a href="/" class="choice">new</a></li>
+                        <li><a href="/" class="choice">rising</a></li>
+                        <li><a href="/" class="choice">controversial</a></li>
+                        <li><a href="/" class="choice">top</a></li>
+                        <li><a href="/" class="choice">gilded</a></li>
+                        <li><a href="/" class="choice">wiki</a></li>
+                        </ul>
+                    </div>
+                    <div><p>What to join? <a href="">Log in</a> or <a href="">sign up</a> in seconds. | English</p></div>
+                </div>
+
+
 
 <!--dash -->
             <div name="dash">
