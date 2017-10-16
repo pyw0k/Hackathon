@@ -87,8 +87,8 @@ def post_comment():
     comment = request.form['comment']
     insert_query_comment = 'INSERT INTO comments (text, created_at, updated_at, user_id, post_id) VALUES (:text, NOW(), NOW(), :user_id, :post_id)'
     query_data = {
-    "text": request.form['text']
-    "user_id": session['hold']
+    "text": request.form['text'],
+    "user_id": session['hold'],
     "post_id": request.form['post_id']
     }
     mysql.query_db(insert_query_comment,query_data)
