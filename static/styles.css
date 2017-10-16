@@ -207,3 +207,20 @@ h4 {
 #headnav1 {
     background-color:#F0F0F0;
 }
+
+.content, #sidepanel {
+    float: right;
+    position: relative;
+    bottom: 6054px;
+    left: 457px;
+}
+
+.extra {
+    float: right;
+    position: relative;
+    left: 825px;
+}
+
+.firstimage {
+    margin: 15px;
+}

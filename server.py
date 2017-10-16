@@ -8,13 +8,19 @@ mysql = MySQLConnector(app,'reddit')
 app.secret_key = "ThisIsSecret!"
 USERNAME_REGEX= re.compile(r'[a-zA-Z0-9.+_-]')
 
-@app.route('/', methods=['GET'])
-def index():
-    if 'user_id' in session and 'username' in session:
-        return redirect('/user')
-# -- subreddit posts --
+@app.route('/user')
+def userdash():
     subpost_query="SELECT posts.text, posts.created_at, users.username, subreddits.url FROM posts JOIN users ON posts.user_id=users.id JOIN subreddits ON posts.subreddit_id=subreddit_id LIMIT 0,50"
     subposts=mysql.query_db(subpost_query)
+    return render_template('user.html', all_subposts=subposts)
+
+@app.route('/', methods=['GET'])
+def index():
+   # if 'user_id' in session and 'username' in session:
+      #  return redirect('/user')
+# -- subreddit posts --
+    subpost_query="SELECT posts.text, posts.created_at, users.username, subreddits.url FROM posts JOIN users ON posts.user_id=users.id JOIN subreddits ON posts.subreddit_id=subreddit_id LIMIT 0,50"
+    subposts = mysql.query_db(subpost_query)
 
     return render_template('index.html', all_subposts=subposts)
 
@@ -101,11 +107,6 @@ def logout():
     session.pop('username', None)
     return redirect('/')
 
-@app.route('/user')
-def userdash():
-    subpost_query="SELECT posts.text, posts.created_at, users.username, subreddits.url FROM posts JOIN users ON posts.user_id=users.id JOIN subreddits ON posts.subreddit_id=subreddit_id LIMIT 0,50"
-    subposts=mysql.query_db(subpost_query)
-    return render_template('user.html', all_subposts=subposts)
 # @app.route('/add_subred', methods=['post'])
 # def add_subred():
 #         subreddit = request.form['subreddit']
