@@ -72,7 +72,45 @@ def longinprocess():
         session['hold']= users.id[0]['id'] #holdsession
         return redirect('/welcome')
  
+@app.route('/post', methods =['POST'])
+def post_message():
+    if 'hold' in session:
+        name_query = 'SELECT * FROM users WHERE id = :id'
+        id_data = { 'id': session['hold'] }
+        id_user = mysql.query_db(name_query,id_data)
+        username = id_user[0]['username']
 
+        query_post = 'SELECT posts.id, text, posts.created_at, posts.updated_at, users.id as author_id, users.username FROM posts JOIN users ON posts.user_id = users.id ORDER BY created_at DESC'
+        query_comment = 'SELECT comments.id, posts_id, comment,comments.created_at,users.id as author_id,users.username FROM comments JOIN users ON comments.user_id = users.id'
+        posts = mysql.query_db(query_post)
+        comments = mysql.query_db(query_comment)
+        return render_template('post.html', username = username, posts = posts, comments = comments)
+    else:
+        return redirect('/post')
+@app.route('/posts_post', methods =['POST'])
+def post_post():
+    post = request.form['post']
+    insert_query_post = "INSERT INTO posts (text, created_at, updated_at, user_id) VALUES(:text,NOW(),NOW(), :user_id)"
+    query_data = {
+        'post': request.form['post'],
+        'user_id' : session['hold']
+    }
+    mysql.query_db(insert_query_post,query_data)
+
+    return redirect('/post')
+
+@app.route('/post_comment', methods = ['POST'])
+def post_comment():
+    comment = request.form['comment']
+    insert_query_comment = 'INSERT INTO comments (text, created_at, updated_at, user_id, post_id) VALUES (:text, NOW(), NOW(), :user_id, :post_id)'
+    query_data = {
+    "text": request.form['text']
+    "user_id": session['hold']
+    "post_id": request.form['post_id']
+    }
+    mysql.query_db(insert_query_comment,query_data)
+
+    return redirect('/post')
 
 
 
