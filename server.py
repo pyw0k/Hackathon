@@ -53,8 +53,10 @@ def longinprocess():
     # query1 = "SELECT username, password FROM users WHERE username = :username AND password = :password"
     # data1 = { "username": request.form['username'], "password": hash_pass}
     query2 = "SELECT * FROM users where users.username = :username"
-    data2 = { 'username': username}  
-    user = mysql.query_db(user_query, query_data)
+    data2 = { 'users.username': username }  
+    #user = mysql.query_db(user_query, query_data)
+    user = mysql.query_db(query2, data2)
+
     # show_query = mysql.query_db(query1, data1)
     # users = mysql.query_db(query2, data2)
 
